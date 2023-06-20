@@ -3,14 +3,15 @@
     <!-- 追加 1 -->
     <template v-slot="{ user, signOut }">
       <main>
-        <header>
-          <h2>Amplify × Vue × Vite</h2>
+        <header class="header">
+          <div class="logo">
+            <a href="/"><img src="/assets/img/logo.png" alt="イリーゼアーチ"></a>
+          </div>
           <nav class="nav">
             <ul class="list">
-              <li><router-link class="routerLink" to="/">Home</router-link></li>
+              <li><router-link class="routerLink" to="/chat_list">Chat_List</router-link></li>
               <li><router-link class="routerLink" to="/chat">Chat</router-link></li>
-              <li><router-link class="routerLink" to="/ai">AI</router-link></li>
-              <li><router-link class="routerLink" to="/geo">Geo</router-link></li>
+              <li><router-link class="routerLink" to="/irs_chat">IRS_Chat</router-link></li>
             </ul>
           </nav>
           <!-- 追加 2 -->
@@ -28,4 +29,6 @@
 
 <style>
 @import '@/assets/base.css';
+@import '@/assets/css/app.css';
 </style>
+
