@@ -40,7 +40,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-viteproject-dev-133413-deployment/amplify-cfn-templates/auth/viteproject20e6b5dc-cloudformation-template.json",
         "logicalId": "authviteproject20e6b5dc"
       },
-      "lastPushTimeStamp": "2023-06-15T08:35:53.387Z",
+      "lastPushTimeStamp": "2023-06-15T08:58:43.988Z",
       "output": {
         "UserPoolId": "ap-northeast-1_Sc3nzUrNU",
         "AppClientIDWeb": "5jcqno1ej39ca14i2e586kk2bd",
@@ -51,6 +51,40 @@
         "UserPoolName": "viteproject20e6b5dc_userpool_20e6b5dc"
       },
       "lastPushDirHash": "/0VOJeJehuiR+viu0fLLjo1vrgk="
+    }
+  },
+  "api": {
+    "viteproject": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "viteproject20e6b5dc",
+          "attributes": [
+            "UserPoolId"
+          ]
+        }
+      ],
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authviteproject20e6b5dc"
+            }
+          },
+          "additionalAuthenticationProviders": []
+        },
+        "GraphQLAPIIdOutput": "fb6yfobm35fobkisydp3cdccgq",
+        "GraphQLAPIEndpointOutput": "https://ubz25w5n5ndhfc375zyyhkceti.appsync-api.ap-northeast-1.amazonaws.com/graphql"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-viteproject-dev-133413-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apiviteproject"
+      },
+      "lastPushTimeStamp": "2023-06-15T08:58:45.965Z",
+      "lastPushDirHash": "7x19zkXZRx/kHbptaAhzcP2Xaw4="
     }
   }
 }
