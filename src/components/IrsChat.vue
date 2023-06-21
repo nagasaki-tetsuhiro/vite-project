@@ -40,7 +40,6 @@
       </div>
     </div>
   </main>
-  <Footer />
 </template>
 
 <script>
