@@ -2,7 +2,7 @@
   <authenticator>
     <template v-slot="{ user, signOut }">
       <main>
-        <Header />
+        <Header :signOut="signOut"/>
         <section>
           <router-view :username="user.username" />
         </section>

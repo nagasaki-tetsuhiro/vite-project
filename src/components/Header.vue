@@ -6,7 +6,6 @@
     <nav class="nav">
       <ul class="list">
         <li><router-link class="routerLink" to="/chat_list">Chat_List</router-link></li>
-        <li><router-link class="routerLink" to="/chat">Chat</router-link></li>
         <li><router-link class="routerLink" to="/irs_chat">IRS_Chat</router-link></li>
       </ul>
     </nav>
@@ -14,10 +13,12 @@
     <button @click="signOut" class="contact">Sign out</button>
   </header>
 </template>
-
 <script>
 export default {
-  name: "Header"
+  name: "Header",
+  props: {
+    signOut: Object,
+  },
 }
 </script>
 
