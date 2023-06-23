@@ -3,6 +3,10 @@
 input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
 
 type Message
+  @model (
+    mutations: {create: "createMessage"}
+    subscriptions:  {onCreate: "onCreateMessage"}
+  )
   @auth(rules: [
     {allow: owner, operations:[read, create, delete]}
     {allow: private,  operations:[read]}
@@ -10,15 +14,6 @@ type Message
 {
   id: ID!
   content: String!
-}
-
-type Mutation {
-  createMessage(input: CreateMessageInput!): Message
-}
-
-input CreateMessageInput {
-  content: String!
-  id: ID
 }
 
 

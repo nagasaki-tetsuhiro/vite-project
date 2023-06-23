@@ -361,8 +361,8 @@
         "DataSourceName": {
           "Ref": "referencetotransformerrootstackGraphQLAPINONEDS2BA9D1C8Name"
         },
-        "Name": "QuerygetMessageauth0Function",
         "FunctionVersion": "2018-05-29",
+        "Name": "QuerygetMessageauth0Function",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -391,8 +391,8 @@
         "DataSourceName": {
           "Ref": "referencetotransformerrootstackGraphQLAPINONEDS2BA9D1C8Name"
         },
-        "Name": "QuerygetMessagepostAuth0Function",
         "FunctionVersion": "2018-05-29",
+        "Name": "QuerygetMessagepostAuth0Function",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -424,8 +424,8 @@
             "Name"
           ]
         },
-        "Name": "QueryGetMessageDataResolverFn",
         "FunctionVersion": "2018-05-29",
+        "Name": "QueryGetMessageDataResolverFn",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -502,7 +502,7 @@
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
-              "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+              "\"))\n$util.qr($ctx.stash.put(\"tableName\", \"",
               {
                 "Ref": "MessageTable"
               },
@@ -525,8 +525,8 @@
             "Name"
           ]
         },
-        "Name": "QueryListMessagesDataResolverFn",
         "FunctionVersion": "2018-05-29",
+        "Name": "QueryListMessagesDataResolverFn",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -603,7 +603,7 @@
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
-              "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+              "\"))\n$util.qr($ctx.stash.put(\"tableName\", \"",
               {
                 "Ref": "MessageTable"
               },
@@ -623,8 +623,8 @@
         "DataSourceName": {
           "Ref": "referencetotransformerrootstackGraphQLAPINONEDS2BA9D1C8Name"
         },
-        "Name": "MutationcreateMessageinit0Function",
         "FunctionVersion": "2018-05-29",
+        "Name": "MutationcreateMessageinit0Function",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -653,8 +653,8 @@
         "DataSourceName": {
           "Ref": "referencetotransformerrootstackGraphQLAPINONEDS2BA9D1C8Name"
         },
-        "Name": "MutationcreateMessageauth0Function",
         "FunctionVersion": "2018-05-29",
+        "Name": "MutationcreateMessageauth0Function",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -686,8 +686,8 @@
             "Name"
           ]
         },
-        "Name": "MutationCreateMessageDataResolverFn",
         "FunctionVersion": "2018-05-29",
+        "Name": "MutationCreateMessageDataResolverFn",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -770,7 +770,7 @@
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
-              "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+              "\"))\n$util.qr($ctx.stash.put(\"tableName\", \"",
               {
                 "Ref": "MessageTable"
               },
@@ -790,8 +790,8 @@
         "DataSourceName": {
           "Ref": "referencetotransformerrootstackGraphQLAPINONEDS2BA9D1C8Name"
         },
-        "Name": "SubscriptionOnCreateMessageDataResolverFn",
         "FunctionVersion": "2018-05-29",
+        "Name": "SubscriptionOnCreateMessageDataResolverFn",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -853,7 +853,7 @@
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
-              "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.toJson({})"
+              "\"))\n\n$util.toJson({})"
             ]
           ]
         },
@@ -869,8 +869,8 @@
         "DataSourceName": {
           "Ref": "referencetotransformerrootstackGraphQLAPINONEDS2BA9D1C8Name"
         },
-        "Name": "MessageOwnerDataResolverFn",
         "FunctionVersion": "2018-05-29",
+        "Name": "MessageOwnerDataResolverFn",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -932,7 +932,7 @@
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
-              "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.toJson({})"
+              "\"))\n\n$util.toJson({})"
             ]
           ]
         },
