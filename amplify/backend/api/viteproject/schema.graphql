@@ -12,20 +12,8 @@ type Message
     {allow: private,  operations:[read]}
   ])
 {
-  _deleted: Boolean
-  _lastChangedAt: AWSTimestamp!
-  _version: Int!
-  content: String!
-  createAt: String!
-  createdAt: AWSDateTime!
   id: ID!
-  imageS3Key: String
-  imageUrl: String
-  roomId: String
-  type: Int
-  updatedAt: String
-  userId: String
-  userName: String
+  content: String!
 }
 
 
