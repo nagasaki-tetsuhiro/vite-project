@@ -1,3 +1,4 @@
+
 type Message {
   id: ID!
   content: String!
@@ -200,3 +201,4 @@ input ModelSubscriptionMessageFilterInput {
 type Subscription {
   onCreateMessage(filter: ModelSubscriptionMessageFilterInput): Message @aws_subscribe(mutations: ["createMessage"])
 }
+
