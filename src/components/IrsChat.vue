@@ -1,6 +1,6 @@
 <template>
   <p class="navigation">
-    <a href="/chat-list.html" class="navigation__link icon--prev">所属グループ名</a>
+    <a href="/irs_chat_list" class="navigation__link icon--prev">所属グループ名</a>
   </p>
   <main class="wrapper">
     <div class="wrapper__main wrapper__chat">
