@@ -1,4 +1,3 @@
-
 type Message {
   id: ID!
   content: String!
@@ -187,8 +186,19 @@ input CreateMessageInput {
   content: String!
 }
 
+input UpdateMessageInput {
+  id: ID!
+  content: String
+}
+
+input DeleteMessageInput {
+  id: ID!
+}
+
 type Mutation {
   createMessage(input: CreateMessageInput!, condition: ModelMessageConditionInput): Message
+  updateMessage(input: UpdateMessageInput!, condition: ModelMessageConditionInput): Message
+  deleteMessage(input: DeleteMessageInput!, condition: ModelMessageConditionInput): Message
 }
 
 input ModelSubscriptionMessageFilterInput {
@@ -199,6 +209,7 @@ input ModelSubscriptionMessageFilterInput {
 }
 
 type Subscription {
-  onCreateMessage(filter: ModelSubscriptionMessageFilterInput): Message @aws_subscribe(mutations: ["createMessage"])
+  onCreateMessage(filter: ModelSubscriptionMessageFilterInput, owner: String): Message @aws_subscribe(mutations: ["createMessage"])
+  onUpdateMessage(filter: ModelSubscriptionMessageFilterInput, owner: String): Message @aws_subscribe(mutations: ["updateMessage"])
+  onDeleteMessage(filter: ModelSubscriptionMessageFilterInput, owner: String): Message @aws_subscribe(mutations: ["deleteMessage"])
 }
-
