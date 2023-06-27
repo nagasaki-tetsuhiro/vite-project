@@ -166,8 +166,14 @@
               "Outputs.UserPoolId"
             ]
           },
+          "authRoleName": {
+            "Ref": "AuthRoleName"
+          },
+          "unauthRoleName": {
+            "Ref": "UnauthRoleName"
+          },
           "S3DeploymentBucket": "amplify-viteproject-dev-133413-deployment",
-          "S3DeploymentRootKey": "amplify-appsync-files/9437bd6662ecd0e78c202249c470f9d00e3f6c28",
+          "S3DeploymentRootKey": "amplify-appsync-files/71da30538de52cf749c57154e867359671cd28b5",
           "env": "dev"
         }
       }

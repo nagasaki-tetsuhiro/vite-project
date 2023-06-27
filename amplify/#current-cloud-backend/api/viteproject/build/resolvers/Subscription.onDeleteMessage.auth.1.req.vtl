@@ -6,7 +6,6 @@ $util.qr($ctx.stash.put("hasAuth", true))
 #end
 #if( $util.authType() == "User Pool Authorization" )
   #set( $isAuthorized = true )
-  #set( $hasValidOwnerArgument = false )
   #set( $authRuntimeFilter = [] )
   #set( $authOwnerRuntimeFilter = [] )
   #set( $authGroupRuntimeFilter = [] )
@@ -22,7 +21,6 @@ $util.qr($ctx.stash.put("hasAuth", true))
     #if( !$isAuthorized && !$util.isNullOrEmpty($ownerEntity0) )
       #if( $ownerEntity0 == $ownerClaim0 || $ownerClaimsList0.contains($ownerEntity0) )
         #set( $isAuthorized = true )
-        #set( $hasValidOwnerArgument = true )
       #else
         $util.unauthorized()
       #end
@@ -35,13 +33,7 @@ $util.qr($ctx.stash.put("hasAuth", true))
   #if( $authGroupRuntimeFilter.size() > 0 )
     $util.qr($authRuntimeFilter.addAll($authGroupRuntimeFilter))
   #end
-  #set( $filterArgsSize = 0 )
-  #if( !$util.isNullOrEmpty($ctx.args.filter) )
-    #set( $filterArgsSize = $ctx.args.filter.size() )
-  #end
-  #set( $isOwnerAuthAuthorizedAndNoOtherFilters = $hasValidOwnerArgument && $authRuntimeFilter.size() == 1 && $filterArgsSize == 0 )
-  #set( $isOwnerOrDynamicAuthAuthorizedWithFilters = (!$isAuthorized || $hasValidOwnerArgument) && $authRuntimeFilter.size() > 0 )
-  #if( !$isOwnerAuthAuthorizedAndNoOtherFilters && $isOwnerOrDynamicAuthAuthorizedWithFilters )
+  #if( !$isAuthorized && $authRuntimeFilter.size() > 0 )
     #if( $util.isNullOrEmpty($ctx.args.filter) )
       #set( $ctx.args.filter = { "or": $authRuntimeFilter } )
     #else

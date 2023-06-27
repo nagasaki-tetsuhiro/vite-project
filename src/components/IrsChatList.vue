@@ -2,6 +2,7 @@
   <main class="wrapper">
     <div class="wrapper__main">
       <ul class="list-chat">
+        <!-- グループ -->
         <li class="list-chat__item">
           <a href="/irs_chat" class="list-chat__link">
             <div class="list-chat__img"><img src="@/assets/img/img_group_sample.svg" alt="グループ画像"></div>

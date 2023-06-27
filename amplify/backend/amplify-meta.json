@@ -14,7 +14,6 @@
   },
   "api": {
     "viteproject": {
-      "service": "AppSync",
       "dependsOn": [
         {
           "attributes": [
@@ -28,12 +27,7 @@
         "authConfig": {
           "additionalAuthenticationProviders": [
             {
-              "authenticationType": "API_KEY",
-              "apiKeyConfig": {
-                "apiKeyExpirationDays": 7,
-                "apiKeyExpirationDate": "2023-06-30T09:08:10.972Z",
-                "description": ""
-              }
+              "authenticationType": "AWS_IAM"
             }
           ],
           "defaultAuthentication": {
@@ -44,17 +38,16 @@
           }
         },
         "GraphQLAPIIdOutput": "fb6yfobm35fobkisydp3cdccgq",
-        "GraphQLAPIEndpointOutput": "http://192.168.56.1:20002/graphql",
-        "GraphQLAPIKeyOutput": "da2-fakeApiId123456"
+        "GraphQLAPIEndpointOutput": "https://ubz25w5n5ndhfc375zyyhkceti.appsync-api.ap-northeast-1.amazonaws.com/graphql"
       },
       "providerPlugin": "awscloudformation",
-      "lastPushTimeStamp": "2023-06-27T01:42:39.533Z",
+      "service": "AppSync",
+      "lastPushTimeStamp": "2023-06-27T03:30:54.043Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-viteproject-dev-133413-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apiviteproject"
       },
-      "lastPushDirHash": "5+z6n7kG4x/89aCJIfey+iV9ms0=",
-      "testMode": true
+      "lastPushDirHash": "/U2+2Ds/4utsy0QYfRBcF36ZWws="
     }
   },
   "auth": {
@@ -90,12 +83,11 @@
         "IdentityPoolName": "viteproject20e6b5dc_identitypool_20e6b5dc__dev",
         "UserPoolName": "viteproject20e6b5dc_userpool_20e6b5dc"
       },
-      "lastPushTimeStamp": "2023-06-23T09:28:56.284Z",
+      "lastPushTimeStamp": "2023-06-27T03:30:54.049Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-viteproject-dev-133413-deployment/amplify-cfn-templates/auth/viteproject20e6b5dc-cloudformation-template.json",
         "logicalId": "authviteproject20e6b5dc"
-      },
-      "lastPushDirHash": "/0VOJeJehuiR+viu0fLLjo1vrgk="
+      }
     }
   }
 }
