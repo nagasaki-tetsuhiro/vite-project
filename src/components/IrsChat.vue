@@ -1,6 +1,9 @@
 <template>
   <p class="navigation">
-    <a href="/irs_chat_list" class="navigation__link icon--prev">所属グループ名</a>
+    <router-link
+        class="navigation__link icon--prev"
+        :to="{name: 'IrsChatList'}">{{ roomName }}
+    </router-link>
   </p>
   <main class="wrapper">
     <div class="wrapper__main wrapper__chat">
@@ -54,6 +57,8 @@ import Footer from '@/components/Footer.vue'
 export default {
   props: {
     username: String,
+    branchId: String,
+    branchName: String,
   },
   components: {
     Footer
@@ -62,6 +67,8 @@ export default {
     const messages = ref([]);
     const content = ref('');
     const subscription = ref({});
+
+    const roomName = ref('TEST1');
 
     const sendMessage = async () => {
       if (!content.value){
@@ -120,6 +127,7 @@ export default {
       messages,
       content,
       sendMessage,
+      roomName,
     };
   },
 };

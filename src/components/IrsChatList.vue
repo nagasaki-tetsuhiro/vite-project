@@ -4,7 +4,7 @@
       <ul class="list-chat">
         <!-- グループ -->
         <li v-for="room in rooms" class="list-chat__item" :key="rooms.id">
-          <a href="/irs_chat" class="list-chat__link">
+          <a href="" class="list-chat__link" @click.prevent.stop="moveIrsChatPage">
             <div class="list-chat__img"><img src="@/assets/img/img_group_sample.svg" alt="グループ画像"></div>
             <div class="list-chat__text">
               <div class="list-chat__name-time">
@@ -37,10 +37,17 @@ export default {
         console.dir(error)
       }
     }
+
     fetch();
     return {
       rooms,
     };
+  },
+  methods: {
+    // チャットページへ遷移
+    moveIrsChatPage () {
+      this.$router.push({ name: 'Irschat', params: { }})
+    }
   }
 }
 </script>
