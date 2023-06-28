@@ -58,8 +58,6 @@ import { useStore } from 'vuex'
 export default {
   props: {
     username: String,
-    branchId: String,
-    branchName: String,
   },
   components: {
     Footer
