@@ -1,6 +1,7 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
+import store from './store';
 
 // Amplify
 import { Amplify } from 'aws-amplify';
@@ -14,5 +15,6 @@ import '@aws-amplify/ui-vue/styles.css';
 const app = createApp(App);
 app.config.productionTip = false;
 app.use(router);
+app.use(store);
 app.use(AmplifyVue);
 app.mount('#app');

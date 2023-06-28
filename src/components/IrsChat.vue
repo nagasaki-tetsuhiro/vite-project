@@ -53,6 +53,7 @@ import { listMessages } from '@/graphql/queries';
 import { onCreateMessage } from '@/graphql/subscriptions';
 import { ref, onBeforeUnmount, onUpdated } from 'vue';
 import Footer from '@/components/Footer.vue'
+import { useStore } from 'vuex'
 
 export default {
   props: {
@@ -67,8 +68,9 @@ export default {
     const messages = ref([]);
     const content = ref('');
     const subscription = ref({});
+    const store = useStore()
 
-    const roomName = ref('TEST1');
+    const roomName = store.getters["room/getRoomName"]
 
     const sendMessage = async () => {
       if (!content.value){
