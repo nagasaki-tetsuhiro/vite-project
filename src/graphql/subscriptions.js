@@ -42,6 +42,8 @@ export const onCreateMessage = /* GraphQL */ `
     onCreateMessage(filter: $filter, owner: $owner) {
       id
       content
+      roomId
+      type
       createdAt
       updatedAt
       owner
@@ -56,6 +58,8 @@ export const onUpdateMessage = /* GraphQL */ `
     onUpdateMessage(filter: $filter, owner: $owner) {
       id
       content
+      roomId
+      type
       createdAt
       updatedAt
       owner
@@ -70,6 +74,8 @@ export const onDeleteMessage = /* GraphQL */ `
     onDeleteMessage(filter: $filter, owner: $owner) {
       id
       content
+      roomId
+      type
       createdAt
       updatedAt
       owner

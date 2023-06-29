@@ -35,6 +35,8 @@ export const getMessage = /* GraphQL */ `
     getMessage(id: $id) {
       id
       content
+      roomId
+      type
       createdAt
       updatedAt
       owner
@@ -51,6 +53,8 @@ export const listMessages = /* GraphQL */ `
       items {
         id
         content
+        roomId
+        type
         createdAt
         updatedAt
         owner

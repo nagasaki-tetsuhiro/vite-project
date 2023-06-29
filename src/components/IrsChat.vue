@@ -68,6 +68,7 @@ export default {
     const subscription = ref({});
     const store = useStore()
 
+    const roomId = store.getters["room/getRoomId"]
     const roomName = store.getters["room/getRoomName"]
 
     const sendMessage = async () => {
@@ -77,6 +78,8 @@ export default {
       const message = {
         id: new Date().getTime() + props.username,
         content: content.value,
+        type: 1,
+        roomId: roomId
       };
 
       // Mutation(createMessage) の実装 ↓
@@ -87,7 +90,7 @@ export default {
 
     const fetch = async () => {
       // Query(listMessages) の実装 ↓
-      API.graphql(graphqlOperation(listMessages, { input: 100 }))
+      API.graphql(graphqlOperation(listMessages, { filter: {roomId: {eq:roomId}} }))
           .then((value) => (messages.value = value.data.listMessages.items.sort((a, b) => (a.id > b.id ? 1 : -1))))
           .catch((error) => console.warn(error));
       // ↑↑↑↑↑↑

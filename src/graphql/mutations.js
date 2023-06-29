@@ -51,6 +51,8 @@ export const createMessage = /* GraphQL */ `
     createMessage(input: $input, condition: $condition) {
       id
       content
+      roomId
+      type
       createdAt
       updatedAt
       owner
@@ -65,6 +67,8 @@ export const updateMessage = /* GraphQL */ `
     updateMessage(input: $input, condition: $condition) {
       id
       content
+      roomId
+      type
       createdAt
       updatedAt
       owner
@@ -79,6 +83,8 @@ export const deleteMessage = /* GraphQL */ `
     deleteMessage(input: $input, condition: $condition) {
       id
       content
+      roomId
+      type
       createdAt
       updatedAt
       owner

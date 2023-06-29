@@ -14,6 +14,7 @@
   },
   "api": {
     "viteproject": {
+      "service": "AppSync",
       "dependsOn": [
         {
           "attributes": [
@@ -38,16 +39,17 @@
           }
         },
         "GraphQLAPIIdOutput": "fb6yfobm35fobkisydp3cdccgq",
-        "GraphQLAPIEndpointOutput": "https://ubz25w5n5ndhfc375zyyhkceti.appsync-api.ap-northeast-1.amazonaws.com/graphql"
+        "GraphQLAPIEndpointOutput": "http://10.160.0.25:20002/graphql",
+        "GraphQLAPIKeyOutput": null
       },
       "providerPlugin": "awscloudformation",
-      "service": "AppSync",
-      "lastPushTimeStamp": "2023-06-29T01:38:59.025Z",
+      "lastPushTimeStamp": "2023-06-29T01:42:04.886Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-viteproject-dev-133413-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apiviteproject"
       },
-      "lastPushDirHash": "vLfl7KyCdz0JOSXkjHTrXeYZt4E="
+      "lastPushDirHash": "vLfl7KyCdz0JOSXkjHTrXeYZt4E=",
+      "testMode": true
     }
   },
   "auth": {
