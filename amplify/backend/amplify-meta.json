@@ -43,7 +43,7 @@
         "GraphQLAPIKeyOutput": null
       },
       "providerPlugin": "awscloudformation",
-      "lastPushTimeStamp": "2023-06-29T01:42:04.886Z",
+      "lastPushTimeStamp": "2023-06-29T06:52:10.401Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-viteproject-dev-133413-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apiviteproject"
