@@ -52,6 +52,9 @@
     "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref": {
       "Type": "String"
     },
+    "referencetotransformerrootstackRoomNestedStackRoomNestedStackResource01C49F14OutputstransformerrootstackRoomQuerygetRoompostAuth0FunctionQuerygetRoompostAuth0FunctionAppSyncFunction72E536BBFunctionId": {
+      "Type": "String"
+    },
     "referencetotransformerrootstackauthRoleNameFB872D50Ref": {
       "Type": "String"
     },
@@ -397,36 +400,6 @@
         "ResponseMappingTemplate": "$util.toJson({})"
       }
     },
-    "QuerygetMessagepostAuth0FunctionQuerygetMessagepostAuth0FunctionAppSyncFunctionFE5B90E2": {
-      "Type": "AWS::AppSync::FunctionConfiguration",
-      "Properties": {
-        "ApiId": {
-          "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
-        },
-        "DataSourceName": {
-          "Ref": "referencetotransformerrootstackGraphQLAPINONEDS2BA9D1C8Name"
-        },
-        "Name": "QuerygetMessagepostAuth0Function",
-        "FunctionVersion": "2018-05-29",
-        "RequestMappingTemplateS3Location": {
-          "Fn::Join": [
-            "",
-            [
-              "s3://",
-              {
-                "Ref": "referencetotransformerrootstackS3DeploymentBucket7592718ARef"
-              },
-              "/",
-              {
-                "Ref": "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref"
-              },
-              "/resolvers/Query.getMessage.postAuth.1.req.vtl"
-            ]
-          ]
-        },
-        "ResponseMappingTemplate": "$util.toJson({})"
-      }
-    },
     "QueryGetMessageDataResolverFnQueryGetMessageDataResolverFnAppSyncFunctionDD6C5FBA": {
       "Type": "AWS::AppSync::FunctionConfiguration",
       "Properties": {
@@ -496,10 +469,7 @@
               ]
             },
             {
-              "Fn::GetAtt": [
-                "QuerygetMessagepostAuth0FunctionQuerygetMessagepostAuth0FunctionAppSyncFunctionFE5B90E2",
-                "FunctionId"
-              ]
+              "Ref": "referencetotransformerrootstackRoomNestedStackRoomNestedStackResource01C49F14OutputstransformerrootstackRoomQuerygetRoompostAuth0FunctionQuerygetRoompostAuth0FunctionAppSyncFunction72E536BBFunctionId"
             },
             {
               "Fn::GetAtt": [
@@ -613,10 +583,7 @@
               ]
             },
             {
-              "Fn::GetAtt": [
-                "QuerygetMessagepostAuth0FunctionQuerygetMessagepostAuth0FunctionAppSyncFunctionFE5B90E2",
-                "FunctionId"
-              ]
+              "Ref": "referencetotransformerrootstackRoomNestedStackRoomNestedStackResource01C49F14OutputstransformerrootstackRoomQuerygetRoompostAuth0FunctionQuerygetRoompostAuth0FunctionAppSyncFunction72E536BBFunctionId"
             },
             {
               "Fn::GetAtt": [
@@ -763,10 +730,7 @@
               ]
             },
             {
-              "Fn::GetAtt": [
-                "QuerygetMessagepostAuth0FunctionQuerygetMessagepostAuth0FunctionAppSyncFunctionFE5B90E2",
-                "FunctionId"
-              ]
+              "Ref": "referencetotransformerrootstackRoomNestedStackRoomNestedStackResource01C49F14OutputstransformerrootstackRoomQuerygetRoompostAuth0FunctionQuerygetRoompostAuth0FunctionAppSyncFunction72E536BBFunctionId"
             },
             {
               "Fn::GetAtt": [
@@ -934,10 +898,7 @@
               ]
             },
             {
-              "Fn::GetAtt": [
-                "QuerygetMessagepostAuth0FunctionQuerygetMessagepostAuth0FunctionAppSyncFunctionFE5B90E2",
-                "FunctionId"
-              ]
+              "Ref": "referencetotransformerrootstackRoomNestedStackRoomNestedStackResource01C49F14OutputstransformerrootstackRoomQuerygetRoompostAuth0FunctionQuerygetRoompostAuth0FunctionAppSyncFunction72E536BBFunctionId"
             },
             {
               "Fn::GetAtt": [
@@ -1102,10 +1063,7 @@
               ]
             },
             {
-              "Fn::GetAtt": [
-                "QuerygetMessagepostAuth0FunctionQuerygetMessagepostAuth0FunctionAppSyncFunctionFE5B90E2",
-                "FunctionId"
-              ]
+              "Ref": "referencetotransformerrootstackRoomNestedStackRoomNestedStackResource01C49F14OutputstransformerrootstackRoomQuerygetRoompostAuth0FunctionQuerygetRoompostAuth0FunctionAppSyncFunction72E536BBFunctionId"
             },
             {
               "Fn::GetAtt": [
@@ -1198,10 +1156,7 @@
               ]
             },
             {
-              "Fn::GetAtt": [
-                "QuerygetMessagepostAuth0FunctionQuerygetMessagepostAuth0FunctionAppSyncFunctionFE5B90E2",
-                "FunctionId"
-              ]
+              "Ref": "referencetotransformerrootstackRoomNestedStackRoomNestedStackResource01C49F14OutputstransformerrootstackRoomQuerygetRoompostAuth0FunctionQuerygetRoompostAuth0FunctionAppSyncFunction72E536BBFunctionId"
             },
             {
               "Ref": "referencetotransformerrootstackRoomNestedStackRoomNestedStackResource01C49F14OutputstransformerrootstackRoomSubscriptionOnCreateRoomDataResolverFnSubscriptionOnCreateRoomDataResolverFnAppSyncFunction2F32407FFunctionId"
@@ -1257,10 +1212,7 @@
               ]
             },
             {
-              "Fn::GetAtt": [
-                "QuerygetMessagepostAuth0FunctionQuerygetMessagepostAuth0FunctionAppSyncFunctionFE5B90E2",
-                "FunctionId"
-              ]
+              "Ref": "referencetotransformerrootstackRoomNestedStackRoomNestedStackResource01C49F14OutputstransformerrootstackRoomQuerygetRoompostAuth0FunctionQuerygetRoompostAuth0FunctionAppSyncFunction72E536BBFunctionId"
             },
             {
               "Ref": "referencetotransformerrootstackRoomNestedStackRoomNestedStackResource01C49F14OutputstransformerrootstackRoomSubscriptionOnCreateRoomDataResolverFnSubscriptionOnCreateRoomDataResolverFnAppSyncFunction2F32407FFunctionId"
@@ -1316,10 +1268,7 @@
               ]
             },
             {
-              "Fn::GetAtt": [
-                "QuerygetMessagepostAuth0FunctionQuerygetMessagepostAuth0FunctionAppSyncFunctionFE5B90E2",
-                "FunctionId"
-              ]
+              "Ref": "referencetotransformerrootstackRoomNestedStackRoomNestedStackResource01C49F14OutputstransformerrootstackRoomQuerygetRoompostAuth0FunctionQuerygetRoompostAuth0FunctionAppSyncFunction72E536BBFunctionId"
             },
             {
               "Ref": "referencetotransformerrootstackRoomNestedStackRoomNestedStackResource01C49F14OutputstransformerrootstackRoomSubscriptionOnCreateRoomDataResolverFnSubscriptionOnCreateRoomDataResolverFnAppSyncFunction2F32407FFunctionId"

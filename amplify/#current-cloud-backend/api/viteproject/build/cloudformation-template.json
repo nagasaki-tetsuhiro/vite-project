@@ -448,6 +448,12 @@
                     "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref": {
                         "Ref": "S3DeploymentRootKey"
                     },
+                    "referencetotransformerrootstackRoomNestedStackRoomNestedStackResource01C49F14OutputstransformerrootstackRoomQuerygetRoompostAuth0FunctionQuerygetRoompostAuth0FunctionAppSyncFunction72E536BBFunctionId": {
+                        "Fn::GetAtt": [
+                            "Room",
+                            "Outputs.transformerrootstackRoomQuerygetRoompostAuth0FunctionQuerygetRoompostAuth0FunctionAppSyncFunction72E536BBFunctionId"
+                        ]
+                    },
                     "referencetotransformerrootstackauthRoleNameFB872D50Ref": {
                         "Ref": "authRoleName"
                     },

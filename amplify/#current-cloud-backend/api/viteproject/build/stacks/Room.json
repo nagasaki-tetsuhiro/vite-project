@@ -1533,6 +1533,14 @@
         }
       }
     },
+    "transformerrootstackRoomQuerygetRoompostAuth0FunctionQuerygetRoompostAuth0FunctionAppSyncFunction72E536BBFunctionId": {
+      "Value": {
+        "Fn::GetAtt": [
+          "QuerygetRoompostAuth0FunctionQuerygetRoompostAuth0FunctionAppSyncFunctionBC9F877F",
+          "FunctionId"
+        ]
+      }
+    },
     "transformerrootstackRoomMutationcreateRoominit0FunctionMutationcreateRoominit0FunctionAppSyncFunctionD1EFBA64FunctionId": {
       "Value": {
         "Fn::GetAtt": [

@@ -10,6 +10,8 @@ type Room @aws_iam @aws_cognito_user_pools {
 type Message @aws_iam @aws_cognito_user_pools {
   id: ID!
   content: String!
+  roomId: String
+  type: Int
   createdAt: AWSDateTime!
   updatedAt: AWSDateTime!
   owner: String
@@ -244,6 +246,8 @@ type ModelMessageConnection @aws_iam @aws_cognito_user_pools {
 input ModelMessageFilterInput {
   id: ModelIDInput
   content: ModelStringInput
+  roomId: ModelStringInput
+  type: ModelIntInput
   and: [ModelMessageFilterInput]
   or: [ModelMessageFilterInput]
   not: ModelMessageFilterInput
@@ -251,6 +255,8 @@ input ModelMessageFilterInput {
 
 input ModelMessageConditionInput {
   content: ModelStringInput
+  roomId: ModelStringInput
+  type: ModelIntInput
   and: [ModelMessageConditionInput]
   or: [ModelMessageConditionInput]
   not: ModelMessageConditionInput
@@ -259,11 +265,15 @@ input ModelMessageConditionInput {
 input CreateMessageInput {
   id: ID
   content: String!
+  roomId: String
+  type: Int
 }
 
 input UpdateMessageInput {
   id: ID!
   content: String
+  roomId: String
+  type: Int
 }
 
 input DeleteMessageInput {
@@ -273,6 +283,8 @@ input DeleteMessageInput {
 input ModelSubscriptionMessageFilterInput {
   id: ModelSubscriptionIDInput
   content: ModelSubscriptionStringInput
+  roomId: ModelSubscriptionStringInput
+  type: ModelSubscriptionIntInput
   and: [ModelSubscriptionMessageFilterInput]
   or: [ModelSubscriptionMessageFilterInput]
 }

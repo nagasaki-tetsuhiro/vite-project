@@ -7,5 +7,7 @@ type Room @model @auth(rules: [{allow: private}]) {
 type Message @model @auth(rules: [{allow: owner, operations: [read, create, delete]}, {allow: private, operations: [read]}]) {
   id: ID!
   content: String!
+  roomId: String
+  type: Int
 }
  
