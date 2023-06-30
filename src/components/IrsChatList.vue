@@ -4,7 +4,7 @@
       <ul class="list-chat">
         <!-- グループ -->
         <li v-for="room in rooms" class="list-chat__item" :key="room.id">
-          <a href="" class="list-chat__link" @click.prevent.stop="moveIrsChatPage(room.id,room.branchName)">
+          <a href="" class="list-chat__link" @click.prevent.stop="moveIrsChatPage(room.branchId,room.branchName)">
             <div class="list-chat__img"><img src="@/assets/img/img_group_sample.svg" alt="グループ画像"></div>
             <div class="list-chat__text">
               <div class="list-chat__name-time">
