@@ -14,7 +14,6 @@
   },
   "api": {
     "viteproject": {
-      "service": "AppSync",
       "dependsOn": [
         {
           "attributes": [
@@ -39,17 +38,15 @@
           }
         },
         "GraphQLAPIIdOutput": "fb6yfobm35fobkisydp3cdccgq",
-        "GraphQLAPIEndpointOutput": "http://192.168.56.1:20002/graphql",
-        "GraphQLAPIKeyOutput": null
+        "GraphQLAPIEndpointOutput": "https://ubz25w5n5ndhfc375zyyhkceti.appsync-api.ap-northeast-1.amazonaws.com/graphql"
       },
       "providerPlugin": "awscloudformation",
-      "lastPushTimeStamp": "2023-06-30T06:15:52.071Z",
+      "service": "AppSync",
+      "lastPushTimeStamp": "2023-06-30T08:28:59.991Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-viteproject-dev-133413-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apiviteproject"
-      },
-      "lastPushDirHash": "eUUOvDF5/pjAMQsCNl8TfJ3LirA=",
-      "testMode": true
+      }
     }
   },
   "auth": {
@@ -85,11 +82,29 @@
         "IdentityPoolName": "viteproject20e6b5dc_identitypool_20e6b5dc__dev",
         "UserPoolName": "viteproject20e6b5dc_userpool_20e6b5dc"
       },
-      "lastPushTimeStamp": "2023-06-29T18:54:31.928Z",
+      "lastPushTimeStamp": "2023-06-30T08:28:59.997Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-viteproject-dev-133413-deployment/amplify-cfn-templates/auth/viteproject20e6b5dc-cloudformation-template.json",
         "logicalId": "authviteproject20e6b5dc"
-      }
+      },
+      "lastPushDirHash": "2j1EASSC7AfZ0V3grzLOnl/Md3Y="
+    }
+  },
+  "storage": {
+    "s3viteprojectstorage50314b36": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "lastPushTimeStamp": "2023-06-30T08:29:02.768Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-viteproject-dev-133413-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
+        "logicalId": "storages3viteprojectstorage50314b36"
+      },
+      "output": {
+        "BucketName": "viteproject-storage-50314b36133413-dev",
+        "Region": "ap-northeast-1"
+      },
+      "lastPushDirHash": "s8n8niV8THiLjGA0gGXuk+S4BNw="
     }
   }
 }

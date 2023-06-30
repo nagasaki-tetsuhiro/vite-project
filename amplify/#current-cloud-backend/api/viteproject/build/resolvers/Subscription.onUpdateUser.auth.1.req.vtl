@@ -12,7 +12,6 @@ $util.unauthorized()
 #end
 #if( $util.authType() == "User Pool Authorization" )
   #set( $isAuthorized = true )
-  #set( $hasValidOwnerArgument = false )
   #set( $authRuntimeFilter = [] )
   #set( $authOwnerRuntimeFilter = [] )
   #set( $authGroupRuntimeFilter = [] )
@@ -23,13 +22,7 @@ $util.unauthorized()
   #if( $authGroupRuntimeFilter.size() > 0 )
     $util.qr($authRuntimeFilter.addAll($authGroupRuntimeFilter))
   #end
-  #set( $filterArgsSize = 0 )
-  #if( !$util.isNullOrEmpty($ctx.args.filter) )
-    #set( $filterArgsSize = $ctx.args.filter.size() )
-  #end
-  #set( $isOwnerAuthAuthorizedAndNoOtherFilters = $hasValidOwnerArgument && $authRuntimeFilter.size() == 1 && $filterArgsSize == 0 )
-  #set( $isOwnerOrDynamicAuthAuthorizedWithFilters = (!$isAuthorized || $hasValidOwnerArgument) && $authRuntimeFilter.size() > 0 )
-  #if( !$isOwnerAuthAuthorizedAndNoOtherFilters && $isOwnerOrDynamicAuthAuthorizedWithFilters )
+  #if( !$isAuthorized && $authRuntimeFilter.size() > 0 )
     #if( $util.isNullOrEmpty($ctx.args.filter) )
       #set( $ctx.args.filter = { "or": $authRuntimeFilter } )
     #else

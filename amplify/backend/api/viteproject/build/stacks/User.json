@@ -367,8 +367,8 @@
         "DataSourceName": {
           "Ref": "referencetotransformerrootstackGraphQLAPINONEDS2BA9D1C8Name"
         },
-        "FunctionVersion": "2018-05-29",
         "Name": "QuerygetUserauth0Function",
+        "FunctionVersion": "2018-05-29",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -397,8 +397,8 @@
         "DataSourceName": {
           "Ref": "referencetotransformerrootstackGraphQLAPINONEDS2BA9D1C8Name"
         },
-        "FunctionVersion": "2018-05-29",
         "Name": "QuerygetUserpostAuth0Function",
+        "FunctionVersion": "2018-05-29",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -430,8 +430,8 @@
             "Name"
           ]
         },
-        "FunctionVersion": "2018-05-29",
         "Name": "QueryGetUserDataResolverFn",
+        "FunctionVersion": "2018-05-29",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -508,7 +508,7 @@
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
-              "\"))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+              "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
               {
                 "Ref": "UserTable"
               },
@@ -547,8 +547,8 @@
             "Name"
           ]
         },
-        "FunctionVersion": "2018-05-29",
         "Name": "QueryListUsersDataResolverFn",
+        "FunctionVersion": "2018-05-29",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -625,7 +625,7 @@
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
-              "\"))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+              "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
               {
                 "Ref": "UserTable"
               },
@@ -661,8 +661,8 @@
         "DataSourceName": {
           "Ref": "referencetotransformerrootstackGraphQLAPINONEDS2BA9D1C8Name"
         },
-        "FunctionVersion": "2018-05-29",
         "Name": "MutationcreateUserinit0Function",
+        "FunctionVersion": "2018-05-29",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -691,8 +691,8 @@
         "DataSourceName": {
           "Ref": "referencetotransformerrootstackGraphQLAPINONEDS2BA9D1C8Name"
         },
-        "FunctionVersion": "2018-05-29",
         "Name": "MutationcreateUserauth0Function",
+        "FunctionVersion": "2018-05-29",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -724,8 +724,8 @@
             "Name"
           ]
         },
-        "FunctionVersion": "2018-05-29",
         "Name": "MutationCreateUserDataResolverFn",
+        "FunctionVersion": "2018-05-29",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -808,7 +808,7 @@
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
-              "\"))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+              "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
               {
                 "Ref": "UserTable"
               },
@@ -844,8 +844,8 @@
         "DataSourceName": {
           "Ref": "referencetotransformerrootstackGraphQLAPINONEDS2BA9D1C8Name"
         },
-        "FunctionVersion": "2018-05-29",
         "Name": "MutationupdateUserinit0Function",
+        "FunctionVersion": "2018-05-29",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -877,8 +877,8 @@
             "Name"
           ]
         },
-        "FunctionVersion": "2018-05-29",
         "Name": "MutationupdateUserauth0Function",
+        "FunctionVersion": "2018-05-29",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -928,8 +928,8 @@
             "Name"
           ]
         },
-        "FunctionVersion": "2018-05-29",
         "Name": "MutationUpdateUserDataResolverFn",
+        "FunctionVersion": "2018-05-29",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -1012,7 +1012,7 @@
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
-              "\"))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+              "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
               {
                 "Ref": "UserTable"
               },
@@ -1051,8 +1051,8 @@
             "Name"
           ]
         },
-        "FunctionVersion": "2018-05-29",
         "Name": "MutationdeleteUserauth0Function",
+        "FunctionVersion": "2018-05-29",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -1102,8 +1102,8 @@
             "Name"
           ]
         },
-        "FunctionVersion": "2018-05-29",
         "Name": "MutationDeleteUserDataResolverFn",
+        "FunctionVersion": "2018-05-29",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -1180,7 +1180,7 @@
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
-              "\"))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+              "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
               {
                 "Ref": "UserTable"
               },
@@ -1216,8 +1216,8 @@
         "DataSourceName": {
           "Ref": "referencetotransformerrootstackGraphQLAPINONEDS2BA9D1C8Name"
         },
-        "FunctionVersion": "2018-05-29",
         "Name": "SubscriptiononCreateUserauth0Function",
+        "FunctionVersion": "2018-05-29",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -1246,8 +1246,8 @@
         "DataSourceName": {
           "Ref": "referencetotransformerrootstackGraphQLAPINONEDS2BA9D1C8Name"
         },
-        "FunctionVersion": "2018-05-29",
         "Name": "SubscriptionOnCreateUserDataResolverFn",
+        "FunctionVersion": "2018-05-29",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -1321,7 +1321,7 @@
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
-              "\"))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:aws:sts::",
+              "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:aws:sts::",
               {
                 "Ref": "AWS::AccountId"
               },
@@ -1383,7 +1383,7 @@
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
-              "\"))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:aws:sts::",
+              "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:aws:sts::",
               {
                 "Ref": "AWS::AccountId"
               },
@@ -1445,7 +1445,7 @@
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
-              "\"))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:aws:sts::",
+              "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:aws:sts::",
               {
                 "Ref": "AWS::AccountId"
               },

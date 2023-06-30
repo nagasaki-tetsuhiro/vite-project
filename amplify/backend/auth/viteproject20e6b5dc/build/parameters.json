@@ -1,6 +1,6 @@
 {
   "identityPoolName": "viteproject20e6b5dc_identitypool_20e6b5dc",
-  "allowUnauthenticatedIdentities": false,
+  "allowUnauthenticatedIdentities": true,
   "resourceNameTruncated": "vitepr20e6b5dc",
   "userPoolName": "viteproject20e6b5dc_userpool_20e6b5dc",
   "autoVerifiedAttributes": [

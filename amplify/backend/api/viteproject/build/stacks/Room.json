@@ -388,8 +388,8 @@
             "Name"
           ]
         },
-        "FunctionVersion": "2018-05-29",
         "Name": "QueryGetRoomDataResolverFn",
+        "FunctionVersion": "2018-05-29",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -460,7 +460,7 @@
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
-              "\"))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+              "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
               {
                 "Ref": "RoomTable"
               },
@@ -499,8 +499,8 @@
             "Name"
           ]
         },
-        "FunctionVersion": "2018-05-29",
         "Name": "QueryListRoomsDataResolverFn",
+        "FunctionVersion": "2018-05-29",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -571,7 +571,7 @@
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
-              "\"))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+              "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
               {
                 "Ref": "RoomTable"
               },
@@ -610,8 +610,8 @@
             "Name"
           ]
         },
-        "FunctionVersion": "2018-05-29",
         "Name": "MutationCreateRoomDataResolverFn",
+        "FunctionVersion": "2018-05-29",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -685,7 +685,7 @@
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
-              "\"))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+              "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
               {
                 "Ref": "RoomTable"
               },
@@ -724,8 +724,8 @@
             "Name"
           ]
         },
-        "FunctionVersion": "2018-05-29",
         "Name": "MutationupdateRoomauth0Function",
+        "FunctionVersion": "2018-05-29",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -775,8 +775,8 @@
             "Name"
           ]
         },
-        "FunctionVersion": "2018-05-29",
         "Name": "MutationUpdateRoomDataResolverFn",
+        "FunctionVersion": "2018-05-29",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -853,7 +853,7 @@
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
-              "\"))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+              "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
               {
                 "Ref": "RoomTable"
               },
@@ -892,8 +892,8 @@
             "Name"
           ]
         },
-        "FunctionVersion": "2018-05-29",
         "Name": "MutationdeleteRoomauth0Function",
+        "FunctionVersion": "2018-05-29",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -943,8 +943,8 @@
             "Name"
           ]
         },
-        "FunctionVersion": "2018-05-29",
         "Name": "MutationDeleteRoomDataResolverFn",
+        "FunctionVersion": "2018-05-29",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -1018,7 +1018,7 @@
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
-              "\"))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+              "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
               {
                 "Ref": "RoomTable"
               },
@@ -1075,7 +1075,7 @@
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
-              "\"))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:aws:sts::",
+              "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:aws:sts::",
               {
                 "Ref": "AWS::AccountId"
               },
@@ -1128,7 +1128,7 @@
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
-              "\"))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:aws:sts::",
+              "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:aws:sts::",
               {
                 "Ref": "AWS::AccountId"
               },
@@ -1181,7 +1181,7 @@
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
-              "\"))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:aws:sts::",
+              "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:aws:sts::",
               {
                 "Ref": "AWS::AccountId"
               },

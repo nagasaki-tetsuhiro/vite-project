@@ -4,6 +4,19 @@
             "Type": "String",
             "Default": "NONE"
         },
+        "AuthCognitoUserPoolId": {
+            "Type": "String"
+        },
+        "AppSyncApiName": {
+            "Type": "String",
+            "Default": "AppSyncSimpleTransform"
+        },
+        "authRoleName": {
+            "Type": "String"
+        },
+        "unauthRoleName": {
+            "Type": "String"
+        },
         "DynamoDBModelTableReadIOPS": {
             "Type": "Number",
             "Default": 5,
@@ -40,19 +53,6 @@
                 "false"
             ],
             "Description": "Enable server side encryption powered by KMS."
-        },
-        "AuthCognitoUserPoolId": {
-            "Type": "String"
-        },
-        "AppSyncApiName": {
-            "Type": "String",
-            "Default": "AppSyncSimpleTransform"
-        },
-        "authRoleName": {
-            "Type": "String"
-        },
-        "unauthRoleName": {
-            "Type": "String"
         },
         "S3DeploymentBucket": {
             "Type": "String",

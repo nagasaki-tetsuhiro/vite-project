@@ -478,10 +478,10 @@
                             "Outputs.transformerrootstackUserMutationupdateUserinit0FunctionMutationupdateUserinit0FunctionAppSyncFunction90E2C98AFunctionId"
                         ]
                     },
-                    "referencetotransformerrootstackGraphQLAPINONEDS2BA9D1C8Name": {
+                    "referencetotransformerrootstackUserNestedStackUserNestedStackResource01084C14OutputstransformerrootstackUserSubscriptiononCreateUserauth0FunctionSubscriptiononCreateUserauth0FunctionAppSyncFunction0FC1B29BFunctionId": {
                         "Fn::GetAtt": [
-                            "GraphQLAPINONEDS95A13CF0",
-                            "Name"
+                            "User",
+                            "Outputs.transformerrootstackUserSubscriptiononCreateUserauth0FunctionSubscriptiononCreateUserauth0FunctionAppSyncFunction0FC1B29BFunctionId"
                         ]
                     },
                     "referencetotransformerrootstackUserNestedStackUserNestedStackResource01084C14OutputstransformerrootstackUserSubscriptionOnCreateUserDataResolverFnSubscriptionOnCreateUserDataResolverFnAppSyncFunctionCAFEE24EFunctionId": {

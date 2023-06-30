@@ -1573,6 +1573,14 @@
         ]
       }
     },
+    "transformerrootstackUserSubscriptiononCreateUserauth0FunctionSubscriptiononCreateUserauth0FunctionAppSyncFunction0FC1B29BFunctionId": {
+      "Value": {
+        "Fn::GetAtt": [
+          "SubscriptiononCreateUserauth0FunctionSubscriptiononCreateUserauth0FunctionAppSyncFunctionE9B4721A",
+          "FunctionId"
+        ]
+      }
+    },
     "transformerrootstackUserSubscriptionOnCreateUserDataResolverFnSubscriptionOnCreateUserDataResolverFnAppSyncFunctionCAFEE24EFunctionId": {
       "Value": {
         "Fn::GetAtt": [

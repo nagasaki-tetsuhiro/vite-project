@@ -1,0 +1,14 @@
+{
+  "resourceName": "s3viteprojectstorage50314b36",
+  "bucketName": "viteproject-storage-50314b36",
+  "policyUUID": "1da962e7",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ]
+}

@@ -42,12 +42,11 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "AppSync",
-      "lastPushTimeStamp": "2023-06-29T18:49:06.907Z",
+      "lastPushTimeStamp": "2023-06-30T08:19:37.838Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-viteproject-dev-133413-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apiviteproject"
-      },
-      "lastPushDirHash": "eUUOvDF5/pjAMQsCNl8TfJ3LirA="
+      }
     }
   },
   "auth": {
@@ -83,11 +82,29 @@
         "IdentityPoolName": "viteproject20e6b5dc_identitypool_20e6b5dc__dev",
         "UserPoolName": "viteproject20e6b5dc_userpool_20e6b5dc"
       },
-      "lastPushTimeStamp": "2023-06-29T18:49:06.841Z",
+      "lastPushTimeStamp": "2023-06-30T08:19:37.897Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-viteproject-dev-133413-deployment/amplify-cfn-templates/auth/viteproject20e6b5dc-cloudformation-template.json",
         "logicalId": "authviteproject20e6b5dc"
-      }
+      },
+      "lastPushDirHash": "2j1EASSC7AfZ0V3grzLOnl/Md3Y="
+    }
+  },
+  "storage": {
+    "s3viteprojectstorage50314b36": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "lastPushTimeStamp": "2023-06-30T08:19:37.897Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-viteproject-dev-133413-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
+        "logicalId": "storages3viteprojectstorage50314b36"
+      },
+      "output": {
+        "BucketName": "viteproject-storage-50314b36133413-dev",
+        "Region": "ap-northeast-1"
+      },
+      "lastPushDirHash": "s8n8niV8THiLjGA0gGXuk+S4BNw="
     }
   }
 }
