@@ -3,6 +3,7 @@ import IrsChatList from '@/components/IrsChatList.vue';
 import IrsChat from '@/components/IrsChat.vue';
 
 const routes = [
+  { path: '', redirect: '/irs_chat_list' },
   {
     path: '/irs_chat_list',
     name: 'IrsChatList',
