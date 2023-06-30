@@ -68,36 +68,41 @@ export default {
     const subscription = ref({});
     const store = useStore()
 
-    const roomId = store.getters["room/getRoomId"]
-    const roomName = store.getters["room/getRoomName"]
+    const roomId = store.getters["room/getBranchId"]
+    const roomName = store.getters["room/getBranchName"]
 
     const sendMessage = async () => {
       if (!content.value){
         return
       }
       const message = {
-        id: new Date().getTime() + props.username,
         content: content.value,
+        roomId: roomId,
+        userId: props.username,
         type: 1,
-        roomId: roomId
+        userName: props.username,
+        imageUrl: null,
+        imageS3Key: null,
       };
 
-      // Mutation(createMessage) の実装 ↓
-      API.graphql(graphqlOperation(createMessage, { input: message })).catch((error) => console.warn(error));
-      // ↑↑↑↑↑↑
-      content.value = '';
+      try {
+        const createResponse =  await API.graphql(graphqlOperation(createMessage, { input: message }))
+        content.value = '';
+      } catch (error) {
+        console.dir(error)
+      }
     };
 
     const fetch = async () => {
-      // Query(listMessages) の実装 ↓
-      API.graphql(graphqlOperation(listMessages, { filter: {roomId: {eq:roomId}} }))
-          .then((value) => (messages.value = value.data.listMessages.items.sort((a, b) => (a.id > b.id ? 1 : -1))))
-          .catch((error) => console.warn(error));
-      // ↑↑↑↑↑↑
+      try {
+        const listMessageResponse = await API.graphql(graphqlOperation(listMessages, { filter: {roomId: {eq:roomId}} }))
+        messages.value = listMessageResponse.data.listMessages.items.sort((a, b) => (a.createdAt > b.createdAt ? 1 : -1))
+      } catch (error) {
+        console.dir(error)
+      }
     };
 
     const subscribe = async () => {
-      // Subscription(onCreateMessages) の実装 1 ↓
       subscription.value = API.graphql(graphqlOperation(onCreateMessage)).subscribe({
         next: (eventData) => {
           const message = eventData.value.data.onCreateMessage;
@@ -105,7 +110,6 @@ export default {
         },
         error: (error) => console.warn(error),
       });
-      // ↑↑↑↑↑↑
     };
 
     const scrollBottom = () => {
@@ -114,9 +118,7 @@ export default {
     };
 
     onBeforeUnmount(() => {
-      // Subscription(onCreateMessages) の実装 2 ↓
       subscription.value.unsubscribe();
-      // ↑↑↑↑↑↑
     });
 
     onUpdated(() => {

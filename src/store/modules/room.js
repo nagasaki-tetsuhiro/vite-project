@@ -13,18 +13,18 @@ export default {
         reset(state) {
             Object.assign(state, getDefaultState())
         },
-        setRoomId (state, value) {
+        setBranchId (state, value) {
             state.branchId = value
         },
-        setRoomName (state, value) {
+        setBranchName (state, value) {
             state.branchName = value
         },
     },
     getters: {
-        getRoomId(state) {
+        getBranchId(state) {
             return state.branchId
         },
-        getRoomName(state) {
+        getBranchName(state) {
             return state.branchName
         },
     },

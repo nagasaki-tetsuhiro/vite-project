@@ -46,8 +46,8 @@ export default {
   methods: {
     // チャットページへ遷移
     moveIrsChatPage (roomId, roomName) {
-      this.$store.commit('room/setRoomId', roomId)
-      this.$store.commit('room/setRoomName', roomName)
+      this.$store.commit('room/setBranchId', roomId)
+      this.$store.commit('room/setBranchName', roomName)
       this.$router.push({ name: 'Irschat', params: { }})
     }
   }

@@ -1,13 +1,27 @@
+type User @model @auth(rules: [{allow: private}]) {
+  id: ID!
+  name: String
+  branchId: String
+  userId: String
+  isAdmin: Boolean
+}
+
 type Room @model @auth(rules: [{allow: private}]) {
   id: ID!
   branchName: String
   branchId: String
+  users: [String]
+  roomLastMessageId: String
 }
 
-type Message @model @auth(rules: [{allow: owner, operations: [read, create, delete]}, {allow: private, operations: [read]}]) {
+type Message @model @auth(rules: [{allow: private, operations: [read]}, {allow: owner}]) {
   id: ID!
   content: String!
   roomId: String
+  userId: String
   type: Int
+  userName: String
+  imageUrl: String
+  imageS3Key: String
 }
  

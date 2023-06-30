@@ -1,7 +1,19 @@
+type User @aws_iam @aws_cognito_user_pools {
+  id: ID!
+  name: String
+  branchId: String
+  userId: String
+  isAdmin: Boolean
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
 type Room @aws_iam @aws_cognito_user_pools {
   id: ID!
   branchName: String
   branchId: String
+  users: [String]
+  roomLastMessageId: String
   createdAt: AWSDateTime!
   updatedAt: AWSDateTime!
 }
@@ -10,7 +22,11 @@ type Message @aws_iam @aws_cognito_user_pools {
   id: ID!
   content: String!
   roomId: String
+  userId: String
   type: Int
+  userName: String
+  imageUrl: String
+  imageS3Key: String
   createdAt: AWSDateTime!
   updatedAt: AWSDateTime!
   owner: String
@@ -166,6 +182,95 @@ enum ModelSortDirection {
   DESC
 }
 
+type ModelUserConnection @aws_iam @aws_cognito_user_pools {
+  items: [User]!
+  nextToken: String
+}
+
+input ModelUserFilterInput {
+  id: ModelIDInput
+  name: ModelStringInput
+  branchId: ModelStringInput
+  userId: ModelStringInput
+  isAdmin: ModelBooleanInput
+  and: [ModelUserFilterInput]
+  or: [ModelUserFilterInput]
+  not: ModelUserFilterInput
+}
+
+type Query {
+  getUser(id: ID!): User @aws_iam @aws_cognito_user_pools
+  listUsers(filter: ModelUserFilterInput, limit: Int, nextToken: String): ModelUserConnection @aws_iam @aws_cognito_user_pools
+  getRoom(id: ID!): Room @aws_iam @aws_cognito_user_pools
+  listRooms(filter: ModelRoomFilterInput, limit: Int, nextToken: String): ModelRoomConnection @aws_iam @aws_cognito_user_pools
+  getMessage(id: ID!): Message @aws_iam @aws_cognito_user_pools
+  listMessages(filter: ModelMessageFilterInput, limit: Int, nextToken: String): ModelMessageConnection @aws_iam @aws_cognito_user_pools
+}
+
+input ModelUserConditionInput {
+  name: ModelStringInput
+  branchId: ModelStringInput
+  userId: ModelStringInput
+  isAdmin: ModelBooleanInput
+  and: [ModelUserConditionInput]
+  or: [ModelUserConditionInput]
+  not: ModelUserConditionInput
+}
+
+input CreateUserInput {
+  id: ID
+  name: String
+  branchId: String
+  userId: String
+  isAdmin: Boolean
+}
+
+input UpdateUserInput {
+  id: ID!
+  name: String
+  branchId: String
+  userId: String
+  isAdmin: Boolean
+}
+
+input DeleteUserInput {
+  id: ID!
+}
+
+type Mutation {
+  createUser(input: CreateUserInput!, condition: ModelUserConditionInput): User @aws_iam @aws_cognito_user_pools
+  updateUser(input: UpdateUserInput!, condition: ModelUserConditionInput): User @aws_iam @aws_cognito_user_pools
+  deleteUser(input: DeleteUserInput!, condition: ModelUserConditionInput): User @aws_iam @aws_cognito_user_pools
+  createRoom(input: CreateRoomInput!, condition: ModelRoomConditionInput): Room @aws_iam @aws_cognito_user_pools
+  updateRoom(input: UpdateRoomInput!, condition: ModelRoomConditionInput): Room @aws_iam @aws_cognito_user_pools
+  deleteRoom(input: DeleteRoomInput!, condition: ModelRoomConditionInput): Room @aws_iam @aws_cognito_user_pools
+  createMessage(input: CreateMessageInput!, condition: ModelMessageConditionInput): Message @aws_iam @aws_cognito_user_pools
+  updateMessage(input: UpdateMessageInput!, condition: ModelMessageConditionInput): Message @aws_iam @aws_cognito_user_pools
+  deleteMessage(input: DeleteMessageInput!, condition: ModelMessageConditionInput): Message @aws_iam @aws_cognito_user_pools
+}
+
+input ModelSubscriptionUserFilterInput {
+  id: ModelSubscriptionIDInput
+  name: ModelSubscriptionStringInput
+  branchId: ModelSubscriptionStringInput
+  userId: ModelSubscriptionStringInput
+  isAdmin: ModelSubscriptionBooleanInput
+  and: [ModelSubscriptionUserFilterInput]
+  or: [ModelSubscriptionUserFilterInput]
+}
+
+type Subscription {
+  onCreateUser(filter: ModelSubscriptionUserFilterInput): User @aws_subscribe(mutations: ["createUser"]) @aws_iam @aws_cognito_user_pools
+  onUpdateUser(filter: ModelSubscriptionUserFilterInput): User @aws_subscribe(mutations: ["updateUser"]) @aws_iam @aws_cognito_user_pools
+  onDeleteUser(filter: ModelSubscriptionUserFilterInput): User @aws_subscribe(mutations: ["deleteUser"]) @aws_iam @aws_cognito_user_pools
+  onCreateRoom(filter: ModelSubscriptionRoomFilterInput): Room @aws_subscribe(mutations: ["createRoom"]) @aws_iam @aws_cognito_user_pools
+  onUpdateRoom(filter: ModelSubscriptionRoomFilterInput): Room @aws_subscribe(mutations: ["updateRoom"]) @aws_iam @aws_cognito_user_pools
+  onDeleteRoom(filter: ModelSubscriptionRoomFilterInput): Room @aws_subscribe(mutations: ["deleteRoom"]) @aws_iam @aws_cognito_user_pools
+  onCreateMessage(filter: ModelSubscriptionMessageFilterInput, owner: String): Message @aws_subscribe(mutations: ["createMessage"]) @aws_iam @aws_cognito_user_pools
+  onUpdateMessage(filter: ModelSubscriptionMessageFilterInput, owner: String): Message @aws_subscribe(mutations: ["updateMessage"]) @aws_iam @aws_cognito_user_pools
+  onDeleteMessage(filter: ModelSubscriptionMessageFilterInput, owner: String): Message @aws_subscribe(mutations: ["deleteMessage"]) @aws_iam @aws_cognito_user_pools
+}
+
 type ModelRoomConnection @aws_iam @aws_cognito_user_pools {
   items: [Room]!
   nextToken: String
@@ -175,21 +280,18 @@ input ModelRoomFilterInput {
   id: ModelIDInput
   branchName: ModelStringInput
   branchId: ModelStringInput
+  users: ModelStringInput
+  roomLastMessageId: ModelStringInput
   and: [ModelRoomFilterInput]
   or: [ModelRoomFilterInput]
   not: ModelRoomFilterInput
 }
 
-type Query {
-  getRoom(id: ID!): Room @aws_iam @aws_cognito_user_pools
-  listRooms(filter: ModelRoomFilterInput, limit: Int, nextToken: String): ModelRoomConnection @aws_iam @aws_cognito_user_pools
-  getMessage(id: ID!): Message @aws_iam @aws_cognito_user_pools
-  listMessages(filter: ModelMessageFilterInput, limit: Int, nextToken: String): ModelMessageConnection @aws_iam @aws_cognito_user_pools
-}
-
 input ModelRoomConditionInput {
   branchName: ModelStringInput
   branchId: ModelStringInput
+  users: ModelStringInput
+  roomLastMessageId: ModelStringInput
   and: [ModelRoomConditionInput]
   or: [ModelRoomConditionInput]
   not: ModelRoomConditionInput
@@ -199,42 +301,30 @@ input CreateRoomInput {
   id: ID
   branchName: String
   branchId: String
+  users: [String]
+  roomLastMessageId: String
 }
 
 input UpdateRoomInput {
   id: ID!
   branchName: String
   branchId: String
+  users: [String]
+  roomLastMessageId: String
 }
 
 input DeleteRoomInput {
   id: ID!
 }
 
-type Mutation {
-  createRoom(input: CreateRoomInput!, condition: ModelRoomConditionInput): Room @aws_iam @aws_cognito_user_pools
-  updateRoom(input: UpdateRoomInput!, condition: ModelRoomConditionInput): Room @aws_iam @aws_cognito_user_pools
-  deleteRoom(input: DeleteRoomInput!, condition: ModelRoomConditionInput): Room @aws_iam @aws_cognito_user_pools
-  createMessage(input: CreateMessageInput!, condition: ModelMessageConditionInput): Message @aws_iam @aws_cognito_user_pools
-  updateMessage(input: UpdateMessageInput!, condition: ModelMessageConditionInput): Message @aws_iam @aws_cognito_user_pools
-  deleteMessage(input: DeleteMessageInput!, condition: ModelMessageConditionInput): Message @aws_iam @aws_cognito_user_pools
-}
-
 input ModelSubscriptionRoomFilterInput {
   id: ModelSubscriptionIDInput
   branchName: ModelSubscriptionStringInput
   branchId: ModelSubscriptionStringInput
+  users: ModelSubscriptionStringInput
+  roomLastMessageId: ModelSubscriptionStringInput
   and: [ModelSubscriptionRoomFilterInput]
   or: [ModelSubscriptionRoomFilterInput]
-}
-
-type Subscription {
-  onCreateRoom(filter: ModelSubscriptionRoomFilterInput): Room @aws_subscribe(mutations: ["createRoom"]) @aws_iam @aws_cognito_user_pools
-  onUpdateRoom(filter: ModelSubscriptionRoomFilterInput): Room @aws_subscribe(mutations: ["updateRoom"]) @aws_iam @aws_cognito_user_pools
-  onDeleteRoom(filter: ModelSubscriptionRoomFilterInput): Room @aws_subscribe(mutations: ["deleteRoom"]) @aws_iam @aws_cognito_user_pools
-  onCreateMessage(filter: ModelSubscriptionMessageFilterInput, owner: String): Message @aws_subscribe(mutations: ["createMessage"]) @aws_iam @aws_cognito_user_pools
-  onUpdateMessage(filter: ModelSubscriptionMessageFilterInput, owner: String): Message @aws_subscribe(mutations: ["updateMessage"]) @aws_iam @aws_cognito_user_pools
-  onDeleteMessage(filter: ModelSubscriptionMessageFilterInput, owner: String): Message @aws_subscribe(mutations: ["deleteMessage"]) @aws_iam @aws_cognito_user_pools
 }
 
 type ModelMessageConnection @aws_iam @aws_cognito_user_pools {
@@ -246,7 +336,11 @@ input ModelMessageFilterInput {
   id: ModelIDInput
   content: ModelStringInput
   roomId: ModelStringInput
+  userId: ModelStringInput
   type: ModelIntInput
+  userName: ModelStringInput
+  imageUrl: ModelStringInput
+  imageS3Key: ModelStringInput
   and: [ModelMessageFilterInput]
   or: [ModelMessageFilterInput]
   not: ModelMessageFilterInput
@@ -255,7 +349,11 @@ input ModelMessageFilterInput {
 input ModelMessageConditionInput {
   content: ModelStringInput
   roomId: ModelStringInput
+  userId: ModelStringInput
   type: ModelIntInput
+  userName: ModelStringInput
+  imageUrl: ModelStringInput
+  imageS3Key: ModelStringInput
   and: [ModelMessageConditionInput]
   or: [ModelMessageConditionInput]
   not: ModelMessageConditionInput
@@ -265,14 +363,22 @@ input CreateMessageInput {
   id: ID
   content: String!
   roomId: String
+  userId: String
   type: Int
+  userName: String
+  imageUrl: String
+  imageS3Key: String
 }
 
 input UpdateMessageInput {
   id: ID!
   content: String
   roomId: String
+  userId: String
   type: Int
+  userName: String
+  imageUrl: String
+  imageS3Key: String
 }
 
 input DeleteMessageInput {
@@ -283,7 +389,11 @@ input ModelSubscriptionMessageFilterInput {
   id: ModelSubscriptionIDInput
   content: ModelSubscriptionStringInput
   roomId: ModelSubscriptionStringInput
+  userId: ModelSubscriptionStringInput
   type: ModelSubscriptionIntInput
+  userName: ModelSubscriptionStringInput
+  imageUrl: ModelSubscriptionStringInput
+  imageS3Key: ModelSubscriptionStringInput
   and: [ModelSubscriptionMessageFilterInput]
   or: [ModelSubscriptionMessageFilterInput]
 }

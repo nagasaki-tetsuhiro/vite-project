@@ -6,7 +6,6 @@
     <nav class="nav">
       <ul class="list">
         <li><router-link class="routerLink" to="/irs_chat_list">Chat_List</router-link></li>
-        <li><router-link class="routerLink" to="/irs_chat">IRS_Chat</router-link></li>
       </ul>
     </nav>
     <!-- 追加 2 -->

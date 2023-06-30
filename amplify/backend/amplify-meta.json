@@ -39,16 +39,16 @@
           }
         },
         "GraphQLAPIIdOutput": "fb6yfobm35fobkisydp3cdccgq",
-        "GraphQLAPIEndpointOutput": "http://10.160.0.25:20002/graphql",
+        "GraphQLAPIEndpointOutput": "http://192.168.56.1:20002/graphql",
         "GraphQLAPIKeyOutput": null
       },
       "providerPlugin": "awscloudformation",
-      "lastPushTimeStamp": "2023-06-29T06:52:10.401Z",
+      "lastPushTimeStamp": "2023-06-30T05:34:09.741Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-viteproject-dev-133413-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apiviteproject"
       },
-      "lastPushDirHash": "vLfl7KyCdz0JOSXkjHTrXeYZt4E=",
+      "lastPushDirHash": "eUUOvDF5/pjAMQsCNl8TfJ3LirA=",
       "testMode": true
     }
   },
@@ -85,7 +85,7 @@
         "IdentityPoolName": "viteproject20e6b5dc_identitypool_20e6b5dc__dev",
         "UserPoolName": "viteproject20e6b5dc_userpool_20e6b5dc"
       },
-      "lastPushTimeStamp": "2023-06-29T01:38:59.042Z",
+      "lastPushTimeStamp": "2023-06-29T18:54:31.928Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-viteproject-dev-133413-deployment/amplify-cfn-templates/auth/viteproject20e6b5dc-cloudformation-template.json",
         "logicalId": "authviteproject20e6b5dc"

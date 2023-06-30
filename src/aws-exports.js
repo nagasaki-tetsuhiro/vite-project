@@ -3,7 +3,7 @@
 
 const awsmobile = {
     "aws_project_region": "ap-northeast-1",
-    "aws_appsync_graphqlEndpoint": "http://10.160.0.25:20002/graphql",
+    "aws_appsync_graphqlEndpoint": "http://192.168.56.1:20002/graphql",
     "aws_appsync_region": "ap-northeast-1",
     "aws_appsync_authenticationType": "AMAZON_COGNITO_USER_POOLS",
     "aws_appsync_dangerously_connect_to_http_endpoint_for_testing": true,
