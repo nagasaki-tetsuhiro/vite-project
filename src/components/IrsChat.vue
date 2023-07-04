@@ -12,12 +12,12 @@
         <div v-if="message.owner !== username" class="chat__content chat__left">
           <p class="chat__name">{{ message.owner }}</p>
           <p class="chat__text">{{ message.content }}</p>
-          <p class="chat__date">{{ message.createdAt }}</p>
+          <p class="chat__date">{{ formatSendAt(message.createdAt) }}</p>
         </div>
         <!-- 自分が送信したメッセージ -->
         <div v-if="message.owner === username" class="chat__content chat__right">
           <p class="chat__text">{{ message.content }}</p>
-          <p class="chat__date">{{ message.createdAt }}</p>
+          <p class="chat__date">{{ formatSendAt(message.createdAt) }}</p>
         </div>
       </div>
 
@@ -54,11 +54,13 @@ import { onCreateMessage } from '@/graphql/subscriptions';
 import { ref, onBeforeUnmount, onUpdated } from 'vue';
 import Footer from '@/components/Footer.vue'
 import { useStore } from 'vuex'
+import mixInCommon from '@/js/mixins/common'
 
 export default {
   props: {
     username: String,
   },
+  mixins: [mixInCommon],
   components: {
     Footer
   },

@@ -14,7 +14,7 @@ export default {
             let afterMinute = 0
             const diffDay = dt.diff(now, 'days')
             const diffMinute = dt.diff(now, 'minutes')
-            if (diffDay.days !== 0) {
+            if (diffDay.days < 0) {
                 return dt.toLocaleString(DateTime.DATETIME_SHORT)
             }
 
