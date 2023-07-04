@@ -2,7 +2,7 @@
   <p class="navigation">
     <router-link
         class="navigation__link icon--prev"
-        :to="{name: 'IrsChatList'}">{{ roomName }}
+        :to="{name: 'IrsChatList'}">{{ branchName }}
     </router-link>
   </p>
   <main class="wrapper">
@@ -48,7 +48,7 @@
 <script>
 import { API, graphqlOperation } from '@aws-amplify/api';
 import { useAuthenticator } from '@aws-amplify/ui-vue';
-import { createMessage } from '@/graphql/mutations';
+import { createMessage, updateRoom } from '@/graphql/mutations';
 import { listMessages } from '@/graphql/queries';
 import { onCreateMessage } from '@/graphql/subscriptions';
 import { ref, onBeforeUnmount, onUpdated } from 'vue';
@@ -70,8 +70,9 @@ export default {
     const subscription = ref({});
     const store = useStore()
 
-    const roomId = store.getters["room/getBranchId"]
-    const roomName = store.getters["room/getBranchName"]
+    const roomId = store.getters["room/getId"]
+    const branchId = store.getters["room/getBranchId"]
+    const branchName = store.getters["room/getBranchName"]
 
     const sendMessage = async () => {
       if (!content.value){
@@ -79,7 +80,7 @@ export default {
       }
       const message = {
         content: content.value,
-        roomId: roomId,
+        roomId: branchId,
         userId: props.username,
         type: 1,
         userName: props.username,
@@ -87,8 +88,15 @@ export default {
         imageS3Key: null,
       };
 
+      const room = {
+        id: roomId,
+        roomLastMessageId: null
+      }
+
       try {
         const createResponse =  await API.graphql(graphqlOperation(createMessage, { input: message }))
+        room.roomLastMessageId = createResponse.data.createMessage.id
+        const updateRoomResponse = await API.graphql(graphqlOperation(updateRoom, { input: room }))
         content.value = '';
       } catch (error) {
         console.dir(error)
@@ -97,7 +105,7 @@ export default {
 
     const fetch = async () => {
       try {
-        const listMessageResponse = await API.graphql(graphqlOperation(listMessages, { filter: {roomId: {eq:roomId}} }))
+        const listMessageResponse = await API.graphql(graphqlOperation(listMessages, { filter: {roomId: {eq:branchId}} }))
         messages.value = listMessageResponse.data.listMessages.items.sort((a, b) => (a.createdAt > b.createdAt ? 1 : -1))
       } catch (error) {
         console.dir(error)
@@ -134,7 +142,7 @@ export default {
       messages,
       content,
       sendMessage,
-      roomName,
+      branchName,
     };
   },
 };

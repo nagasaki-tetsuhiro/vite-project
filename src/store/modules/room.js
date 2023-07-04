@@ -1,4 +1,5 @@
 const getDefaultState = () => ({
+    id: '',
     branchId: '',
     branchName: '',
 })
@@ -6,12 +7,16 @@ const getDefaultState = () => ({
 export default {
     namespaced: true,
     state: {
+        id: '',
         branchId: '',
         branchName: '',
     },
     mutations: {
         reset(state) {
             Object.assign(state, getDefaultState())
+        },
+        setId (state, value) {
+            state.id = value
         },
         setBranchId (state, value) {
             state.branchId = value
@@ -21,6 +26,9 @@ export default {
         },
     },
     getters: {
+        getId(state){
+            return state.id
+        },
         getBranchId(state) {
             return state.branchId
         },
