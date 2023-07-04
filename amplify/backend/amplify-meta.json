@@ -43,7 +43,7 @@
         "GraphQLAPIKeyOutput": null
       },
       "providerPlugin": "awscloudformation",
-      "lastPushTimeStamp": "2023-06-30T09:00:54.896Z",
+      "lastPushTimeStamp": "2023-07-04T01:36:24.029Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-viteproject-dev-133413-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apiviteproject"
@@ -97,7 +97,7 @@
       "service": "S3",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
-      "lastPushTimeStamp": "2023-06-30T09:00:48.901Z",
+      "lastPushTimeStamp": "2023-07-04T01:36:14.938Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-viteproject-dev-133413-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
         "logicalId": "storages3viteprojectstorage50314b36"
