@@ -26,9 +26,21 @@
           <a href="#" class="btn">
             <img src="@/assets/img/icon_camera.svg" alt="" width="20" height="18">
           </a>
+          <!--
           <a href="#" class="btn">
             <img src="@/assets/img/icon_img.svg" alt="" width="18" height="18">
-          </a>
+          </a> -->
+          <label id="file_select_label">
+            <span class="btn" title="">
+              <img src="@/assets/img/icon_img.svg" alt="" width="18" height="18">
+            </span>
+            <input
+                type="file"
+                name="datafile"
+                id="file_select"
+                @change="selectFile"
+            >
+          </label>
           <div class="input__wrap">
             <input
                 type="text"
@@ -44,6 +56,18 @@
     </div>
   </main>
 </template>
+
+
+<style>
+#file_select_label {
+  width: 10%;
+}
+
+input[type="file"] {
+  display: none;
+}
+</style>
+
 
 <script>
 import { API, graphqlOperation } from '@aws-amplify/api';
@@ -145,5 +169,32 @@ export default {
       branchName,
     };
   },
+  methods: {
+    selectFile (event, key = '', image = {}) {
+      console.dir('aaaaa')
+      console.dir(event)
+      console.dir(key)
+      console.dir(image)
+      // this.isDrag = null; //★ドラッグ中のクラスを外しておく。
+      let fileList = event.target.files ? event.target.files : event.dataTransfer.files; //★①ファイル取得
+
+      console.dir('fileList')
+      console.dir(fileList)
+
+      // ファイルが無い時は処理を中止
+      if(fileList.length == 0){
+        return false
+      }
+      let files    = [];
+      for(let i = 0; i < fileList.length; i++){
+        files.push(fileList[i])
+      }
+      // 今回は1ファイルのみ送ることにする。
+      let file = files.length > 0 ? files[0] : [];
+      let fd   = new FormData(); //★②
+      fd.append('file', file);
+      console.dir(fd)
+    }
+  }
 };
 </script>
